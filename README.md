@@ -1,5 +1,5 @@
 # newapp
-
+<!-- (FirebaseAuth.instance.currentUser != null) ? LoginPage() : HomePage(), -->
 A new Flutter project.
 
 ## Getting Started

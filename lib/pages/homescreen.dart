@@ -198,6 +198,8 @@ await FirebaseAuth.instance.signOut();
 
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser;
+    print(user);
     return Scaffold(
       appBar: _appBar(),
       body: _formFields(),
@@ -232,8 +234,10 @@ await FirebaseAuth.instance.signOut();
             ),
           ),
           const SizedBox(height: 20),
+           
           Expanded(
             child: StreamBuilder<QuerySnapshot>(
+              
               stream: FirebaseFirestore.instance.collection("details").snapshots(),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.active) {
